@@ -2,3 +2,4 @@
 
 배포까지 해보았습니다.
 
+https://judeyong.github.io/react-netflix/
