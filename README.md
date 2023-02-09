@@ -15,6 +15,33 @@ https://www.themoviedb.org에 가입한 후 제공되는 API key를 이용해 �
 
 
 4. 리액트 라우터 설정.
+const Layout = () => {
+  return(
+    <div>
+      <Nav/>
+
+      <Outlet/>
+
+      <Footer/>
+    </div>
+  );
+};
+
+function App() {
+  return (
+    <div className="App">
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<MainPage />} />
+          <Route path=':movieId' element={<DetailPage />} />
+          <Route path='Search' element={<SearchPage />} />
+        </Route>
+      </Routes>
+    </div>
+  )
+}
+
+export default App;
 
 
 
