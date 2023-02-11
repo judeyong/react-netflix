@@ -29,7 +29,7 @@ https://www.themoviedb.org에 가입한 후 제공되는 API key를 이용해 �
 
 ### CSS, styledComponent 사용.
 <br/>기본적인 css와 styled-components를 사용했습니다.
-<br/>css는 파일로 따로 분리하여 사용 하였고 styled-components는 하단 부분에 정의하였습니다.
+<br/>css는 파일로 따로 분리하여 하였고 styled-components는 하단 부분에 정의하였습니다.
 
 
 ### 리액트 라우터 설정.
@@ -60,6 +60,7 @@ https://www.themoviedb.org에 가입한 후 제공되는 API key를 이용해 �
       )
     }
 
+
 화면 구성에서 nav와 footer 부분은 항상 고정되어 있습니다.
 <br/>이 두 개의 컴포넌트들은 리액트 라우터를 통해 어느 페이지에서나 보이게 고정되어 있습니다.
 <br/>리액트 라우터의 아웃렛(Outlet)을 통해 접속 경로에 따라 컴포넌트를 렌더해 줍니다.
@@ -74,7 +75,8 @@ navbar에 위치한 검색창에 검색을 하면 검색 결과가 화면에 나
 <br/>input의 글자를 입력할 때마다 setState에 글자가 추가되며 이는 곧 렌더가 다시 일어나는 상황을 만듭니다.
 <br/>리렌링이 자주 발생하는 것은 성능 저하를 만들고 백엔드에서 불필요한 로드가 생깁니다.
 <br/>리액트는 렌더가 연속적으로 일어나면 이를 하나로 묶어서 처리하는 것을 지원합니다.
-<br/>비동기 처리와 Custom hooks에 익숙해지기 위해 만들었습니다. 이 과정에서 state가 바뀜에 따라 렌더링이 일어나는 리액트를 이해하는 시간이었습니다.
+<br/>아직 비동기 처리와 Custom hooks에 익숙하지 않습니다.
+<br/>이 과정에서 state가 바뀜에 따라 렌더링이 일어나는 리액트를 이해하는 시간이었습니다.
 <br/>useDebounce hooks는 불필요한 렌더를 줄이기 위해 입력이 멈추기 전까지 계속 입력을 받고 입력이 멈췄을 때 state를 한 번에 업데이트합니다.
 
     import { useState, useEffect } from "react";
@@ -127,6 +129,7 @@ useOnClickOutside hooks는 2개의 인자를 받습니다.
 <br/>true 상태이면 modal 창이 열린 것이고 false로 바꿔준다면 modal 창이 닫히게 됩니다.
 
 --------------------
+
 ### 상세보기 (Modal) 구현
 <br/>Row.js의 modalOpen state를 만들어 false 값으로 초기화해줍니다.
 <br/>modalOpen state의 역할은 row의 아이템을 클릭 시 modal 창을 띄우고 닫기 위해 사용합니다.
