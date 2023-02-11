@@ -22,21 +22,24 @@ https://www.themoviedb.org에 가입한 후 제공되는 API key를 이용해 �
 
 
 ### CSS, styledComponent 사용.
+<br/>기본적인 css와 styled-components를 사용했습니다.
+<br/>css는 파일로 따로 분리하여 사용 하였고 styled-components는 하단 부분에 정의하였습니다.
 
 
 ### 리액트 라우터 설정.
 
     const Layout = () => {
-    return(
-        <div>
-        <Nav/>
+        return(
+            <div>
+                <Nav/>
 
-      <Outlet/>
+                <Outlet/>
 
-      <Footer/>
-    </div>
-    );
-    };
+                <Footer/>
+            </div>
+        );
+    }
+    
     function App() {
       return (
         <div className="App">
@@ -58,9 +61,61 @@ https://www.themoviedb.org에 가입한 후 제공되는 API key를 이용해 �
 <br/>그 밑은 row 컴포넌트가 가로 방향으로 영화들을 나열합니다. 클릭 시 상세보기가 modal 형태로 나타납니다. 그 밑은 footer가 존재합니다.
 
 ### Custom hooks
-상세보기 (Modal) 구현
+    import { useState, useEffect } from "react";
 
-### 문제점과 해결 남은 개선사항들.
+    export const useDebounce = (value, delay) => {
+
+    const [debounceValue, setDebounceValue] = useState(value);
+
+    useEffect(() => {
+        const handler = setTimeout(() =>{
+            setDebounceValue(value);
+            }, delay);
+
+            return () => {
+                clearTimeout(handler)
+            };
+        }, [value, delay]);
+
+        return debounceValue;
+    }
+
+### 상세보기 (Modal) 구현
+<br/>Row.js의 modalOpen state를 만들어 false 값으로 초기화해줍니다.
+<br/>modalOpen state의 역할은 row의 아이템을 클릭 시 modal 창을 띄우고 닫기 위해 사용합니다.
+<br/>movieModal 컴포넌트에 props로 클릭한 movie 정보를 넘겨줍니다.
+
+    {modalOpen && (<MovieModal {...movieSelected} setModalOpen={setModalOpen}/>)}
+
+    <div className='presentation'>
+        <div className='wrapper-modal'>
+            <div className='modal' ref={ref}>
+                <span onClick={() => setModalOpen(false)} className='modal-close'>
+                    x
+                </span>
+                
+                <img
+                    className='modal__poster-img'
+                    src={`https://image.tmdb.org/t/p/original/${backdrop_path}`}
+                    alt='modal__poster-img'
+                />
+
+                <div className='modal__content'>
+                    <p className='modal__details'>
+                        <span className='modal__user_perc'>
+                            100% for you!
+                        </span>
+                        {release_date ? release_date : first_air_date}
+                    </p>
+                    <h2 className='modal__title'>{title ? title : name}</h2>
+                    <p className='modal__overview'>평점은: {vote_average}</p>
+                    <p className='modal__overview'>{overview}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+### 문제점.
  
 제공되는 데이터의 정확성.
  
