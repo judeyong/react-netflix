@@ -8,7 +8,7 @@ https://judeyong.github.io/react-netflix/
 
 <br/>
 인프런의 따라 하며 배우는 리액트 A-Z 강의를 보며 진행하였습니다.
-<br/>프로젝트의 기본 설정과 react-router, custom hooks, modal 부분을 설명합니다.
+<br/>프로젝트의 기본 설정과 react-router, custom hooks, modal 부분을 간략하게 설명합니다.
 
 ### Create React App으로 리액트 설치.
 
