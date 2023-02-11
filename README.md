@@ -136,6 +136,8 @@ useOnClickOutside hooks는 2개의 인자를 받습니다.
 <br/>movieModal 컴포넌트에 props로 클릭한 movie 정보를 넘겨줍니다.
 
     {modalOpen && (<MovieModal {...movieSelected} setModalOpen={setModalOpen}/>)}
+    
+<br>...
 
     <div className='presentation'>
         <div className='wrapper-modal'>
