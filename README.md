@@ -176,10 +176,10 @@ useOnClickOutside hooks는 2개의 인자를 받습니다.
  
 # 리액트의 버전 충돌시
 <br/>리액트 18 버전에서 지원이 원활하지 않은 라이브러리가 간혹 존재합니다. ex) react-beautiful-dnd
-<br/>실행이 되더라도 warnning 표시가 나옵니다.
-<br/>혹은 <StrictMode> 부분을 지워서 임시적으로 해결할 수 있습니다.
-<br/><StrictMode>는 React에서 애플리케이션의 잠재적인 문제를 알아내기 위해 기본적으로 제공되는 도구입니다.
-<br/>공식 홈페이지에서는 <StrictMode> 사용을 권장합니다.
+<br/>실행은 되지만 warnning 표시가 나옵니다.
+<br/>StrictMode를 지워서 해결할 수 있습니다.
+<br/>StrictMode는 React에서 애플리케이션의 잠재적인 문제를 알아내기 위해 기본적으로 제공되는 도구입니다.
+<br/>공식 홈페이지에서는 StrictMode 사용을 권장합니다.
 
 
 # 추가해 볼 만한 것.
