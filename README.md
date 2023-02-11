@@ -9,6 +9,7 @@ https://judeyong.github.io/react-netflix/
 <br/>
 인프런의 따라 하며 배우는 리액트 A-Z 강의를 보며 진행하였습니다.
 <br/>
+
 ### Create React App으로 리액트 설치.
 
 프론트엔드 분야는 많은 기술이 빠르게 나타나면서 초기 세팅에 많은 번거로움이 생긴 걸로 알고 있습니다.
